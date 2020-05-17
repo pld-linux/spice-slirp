@@ -1,6 +1,6 @@
-Summary:	User network stack library
-Summary(pl.UTF-8):	Biblioteka stosu sieciowego użytkownika
-Name:		libslirp
+Summary:	SPICE SLIRP - user network stack library
+Summary(pl.UTF-8):	SPICE SLIRP - biblioteka stosu sieciowego użytkownika
+Name:		spice-slirp
 %define	snap	20120426
 %define	gitref	8c2da74c1385242f20799fec8c04f8378edc6550
 Version:	0.0.1
@@ -17,6 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Obsoletes:	libslirp < 0.0.1-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,28 +27,30 @@ User network stack library.
 Biblioteka stosu sieciowego użytkownika.
 
 %package devel
-Summary:	Header files for SLIRP library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki SLIRP
+Summary:	Header files for SPICE SLIRP library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki SPICE SLIRP
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	libslirp-devel < 0.0.1-1
 
 %description devel
-Header files for SLIRP library.
+Header files for SPICE SLIRP library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki SLIRP.
+Pliki nagłówkowe biblioteki SPICE SLIRP.
 
 %package static
-Summary:	Static SLIRP library
-Summary(pl.UTF-8):	Statyczna biblioteka SLIRP
+Summary:	Static SPICE SLIRP library
+Summary(pl.UTF-8):	Statyczna biblioteka SPICE SLIRP
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+Obsoletes:	libslirp-static < 0.0.1-1
 
 %description static
-Static SLIRP library.
+Static SPICE SLIRP library.
 
 %description static -l pl.UTF-8
-Statyczna biblioteka SLIRP.
+Statyczna biblioteka SPICE SLIRP.
 
 %prep
 %setup -q -n slirp-%{gitref}
